@@ -1,10 +1,11 @@
-# Extract all paths/links from an endpoint, logs into console :
-
+### Extract all paths/links from an endpoint, logs into console :
+```
 [...new Set([...document.querySelectorAll("a[href]")].map(a => new URL(a.href, location.href).pathname))]
 .forEach(path => console.log(path));
+```
 
-# Extracts all a[href] links , and outputs it into a file :
-
+### Extracts all a[href] links , and outputs it into a file :
+```
 (() => {
     const paths = [...new Set([...document.querySelectorAll("a[href]")].map(a => new URL(a.href, location.href).pathname))];
     
@@ -19,10 +20,10 @@
     a.click();
     document.body.removeChild(a);
 })();
+```
 
-
-# Extracts all possible links under current endpoint [src] / [href] / form[action] :
-
+### Extracts all possible links under current endpoint [src] / [href] / form[action] :
+```
 (() => {
     const paths = [...new Set([...document.querySelectorAll("a[href]")].map(a => new URL(a.href, location.href).pathname))];
     
@@ -37,3 +38,4 @@
     a.click();
     document.body.removeChild(a);
 })();
+```
